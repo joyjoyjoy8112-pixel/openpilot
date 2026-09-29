@@ -932,3 +932,10 @@ msgstr "조이 기능 사용"
 
 msgid "Master switch for Joy custom features."
 msgstr "조이 전용 기능의 전체 사용 여부를 설정합니다."
+
+
+msgid "Joy debug overlay"
+msgstr "조이 디버그 표시"
+
+msgid "Show FPS and touch positions for Joy development."
+msgstr "조이 개발용 FPS와 터치 위치를 화면에 표시합니다."
