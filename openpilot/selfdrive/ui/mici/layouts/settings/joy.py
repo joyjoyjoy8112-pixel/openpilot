@@ -14,6 +14,12 @@ class JoyLayoutMici(NavScroller):
       description=tr("Master switch for Joy custom features.")
     )
 
+    joy_status_badge = BigParamControl(
+      "주행 표시",
+      "JoyStatusBadgeEnabled",
+      description="주행 화면에 조이 상태를 표시합니다."
+    )
+
     def debug_callback(state: bool):
       gui_app.set_show_fps(state)
       gui_app.set_show_touches(state)
@@ -28,6 +34,7 @@ class JoyLayoutMici(NavScroller):
     self._scroller.add_widgets([
       GreyBigButton(tr("Joy"), tr("Version 0.1")),
       joy_enabled,
+      joy_status_badge,
       joy_debug,
       GreyBigButton(tr("Joy custom settings"), tr("More features will be added here.")),
     ])

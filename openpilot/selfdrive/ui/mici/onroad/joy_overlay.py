@@ -10,20 +10,28 @@ from openpilot.system.ui.widgets import Widget
 class JoyStatusBadge(Widget):
   def __init__(self):
     super().__init__()
+
+    # First-run default: show the Joy status badge.
+    # Only initialize when no user value has ever been saved.
+    if ui_state.params.get("JoyStatusBadgeEnabled") is None:
+      ui_state.params.put_bool("JoyStatusBadgeEnabled", True, block=True)
+
     self._font = gui_app.font(FontWeight.BOLD)
 
   def _render(self, rect: rl.Rectangle):
     if not ui_state.params.get_bool("JoyEnabled"):
       return
+    if not ui_state.params.get_bool("JoyStatusBadgeEnabled"):
+      return
 
     if ui_state.status == UIStatus.ENGAGED:
-      text = tr("Joy active")
+      text = "조이 작동"
       bg_color = rl.Color(0, 100, 45, 210)
     elif ui_state.status == UIStatus.OVERRIDE:
-      text = tr("Joy override")
+      text = "조이 개입"
       bg_color = rl.Color(140, 85, 0, 210)
     else:
-      text = tr("Joy standby")
+      text = "조이 대기"
       bg_color = rl.Color(35, 35, 35, 190)
 
     font_size = 34

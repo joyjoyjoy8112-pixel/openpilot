@@ -949,3 +949,10 @@ msgstr "조이 개입"
 
 msgid "Joy standby"
 msgstr "조이 대기"
+
+
+msgid "Joy status badge"
+msgstr "주행 상태 배지 표시"
+
+msgid "Show Joy driving status on the road screen."
+msgstr "주행 화면에 조이 상태를 표시합니다."
