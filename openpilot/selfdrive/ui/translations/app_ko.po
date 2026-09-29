@@ -911,3 +911,24 @@ msgstr "교육 안내\n다시 보기"
 # Joy comma4 UI
 msgid "terms &\nconditions"
 msgstr "이용약관"
+
+
+# Joy custom settings
+msgid "Joy settings"
+msgstr "조이 설정"
+
+msgid "Joy custom settings"
+msgstr "조이 사용자 설정"
+
+msgid "Version 0.1"
+msgstr "버전 0.1"
+
+msgid "More features will be added here."
+msgstr "여기에 조이 전용 기능을 추가합니다."
+
+
+msgid "Joy enabled"
+msgstr "조이 기능 사용"
+
+msgid "Master switch for Joy custom features."
+msgstr "조이 전용 기능의 전체 사용 여부를 설정합니다."

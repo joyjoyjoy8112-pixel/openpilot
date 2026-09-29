@@ -7,6 +7,7 @@ from openpilot.selfdrive.ui.mici.layouts.settings.device.device_layout import De
 from openpilot.selfdrive.ui.mici.layouts.settings.developer import DeveloperLayoutMici
 from openpilot.selfdrive.ui.mici.layouts.settings.software import SoftwareLayoutMici
 from openpilot.selfdrive.ui.mici.layouts.settings.firehose import FirehoseLayout
+from openpilot.selfdrive.ui.mici.layouts.settings.joy import JoyLayoutMici
 from openpilot.system.ui.lib.application import gui_app, FontWeight
 from openpilot.system.ui.lib.multilang import tr
 
@@ -37,6 +38,10 @@ class SettingsLayout(NavScroller):
     software_btn = SettingsBigButton(tr("software"), "", gui_app.texture("icons_mici/settings/software.png", 64, 75))
     software_btn.set_click_callback(lambda: gui_app.push_widget(software_panel))
 
+    joy_panel = JoyLayoutMici()
+    joy_btn = SettingsBigButton(tr("Joy settings"), "", gui_app.texture("icons_mici/settings/developer_icon.png", 64, 60))
+    joy_btn.set_click_callback(lambda: gui_app.push_widget(joy_panel))
+
     developer_panel = DeveloperLayoutMici()
     developer_btn = SettingsBigButton(tr("developer"), "", gui_app.texture("icons_mici/settings/developer_icon.png", 64, 60))
     developer_btn.set_click_callback(lambda: gui_app.push_widget(developer_panel))
@@ -50,6 +55,7 @@ class SettingsLayout(NavScroller):
       network_btn,
       self._device_button,
       software_btn,
+      joy_btn,
       firehose_btn,
       developer_btn,
     ])
