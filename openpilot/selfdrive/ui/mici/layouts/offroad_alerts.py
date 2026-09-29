@@ -307,6 +307,9 @@ class MiciOffroadAlerts(Scroller):
       if alert_json:
         text = alert_json.get("text", "").replace("%1", alert_json.get("extra", ""))
 
+        if alert_data.key == "Offroad_Pairing":
+          text = tr("Finish Setup") + ". " + tr("Pair your device with comma connect (connect.comma.ai) and claim your comma prime offer.")
+
       if text and not alert_data.visible:
         # Bump newly visible alerts to the top, severity sort keeps it at the top of its category
         widget = next(w for w in self._scroller.items if w.alert_data is alert_data)

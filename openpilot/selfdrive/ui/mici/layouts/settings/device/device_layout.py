@@ -93,7 +93,7 @@ class EngagedConfirmationButton(BigButton):
 class DeviceInfoLayoutMici(InfoLayoutMici):
   def __init__(self):
     params = Params()
-    super().__init__("device ID", params.get("DongleId") or 'N/A', "serial", params.get("HardwareSerial") or 'N/A', width=380)
+    super().__init__(tr("device ID"), params.get("DongleId") or tr("N/A"), tr("serial"), params.get("HardwareSerial") or tr("N/A"), width=380)
 
 
 class PairBigButton(BigButton):
@@ -103,7 +103,7 @@ class PairBigButton(BigButton):
     self._comma_icon = gui_app.texture("icons_mici/settings/comma_icon.png", 33, 60)
     self._provider_icons = {provider: gui_app.texture(f"icons_mici/settings/device/paired_{provider}.png", 64, 64)
                            for provider in ("github", "google", "apple")}
-    super().__init__("pair to connect", "connect.comma.ai", self._comma_icon)
+    super().__init__(tr("pair to connect"), "connect.comma.ai", self._comma_icon)
 
   def _update_state(self):
     super()._update_state()
@@ -112,14 +112,14 @@ class PairBigButton(BigButton):
                             and ui_state.prime_state.has_commacare())
     if ui_state.prime_state.is_paired():
       self.set_icon(self._provider_icons.get(ui_state.prime_state.get_pairing_provider(), self._comma_icon))
-      self.set_text("paired")
+      self.set_text(tr("paired"))
       if ui_state.prime_state.is_prime():
-        self.set_value("prime" if ui_state.prime_state.is_full_prime() else "prime lite")
+        self.set_value(tr("prime") if ui_state.prime_state.is_full_prime() else tr("prime lite"))
       else:
-        self.set_value("claim prime trial" if ui_state.prime_state.can_claim_prime_trial() else "upgrade to prime")
+        self.set_value(tr("claim prime trial") if ui_state.prime_state.can_claim_prime_trial() else tr("upgrade to prime"))
     else:
       self.set_icon(self._comma_icon)
-      self.set_text("pair to connect")
+      self.set_text(tr("pair to connect"))
       self.set_value("connect.comma.ai")
 
   def _draw_subtitle(self, rect: rl.Rectangle):
@@ -165,31 +165,31 @@ class DeviceLayoutMici(NavScroller):
       params.remove("LiveDelay")
       params.put_bool("OnroadCycleRequested", True, block=True)
 
-    reset_calibration_btn = EngagedConfirmationButton("reset calibration", "reset", gui_app.texture("icons_mici/settings/device/lkas.png", 122, 64),
+    reset_calibration_btn = EngagedConfirmationButton(tr("reset calibration"), tr("reset"), gui_app.texture("icons_mici/settings/device/lkas.png", 122, 64),
                                                       reset_calibration_callback,
                                                       description="Mount the device within 4° left or right and 5° up or 9° down. openpilot calibrates " +
                                                                   "continuously; resetting is rarely needed. Resetting clears learned calibration.")
 
-    reboot_btn = EngagedConfirmationCircleButton("reboot", gui_app.texture("icons_mici/settings/device/reboot.png", 64, 70),
+    reboot_btn = EngagedConfirmationCircleButton(tr("reboot"), gui_app.texture("icons_mici/settings/device/reboot.png", 64, 70),
                                                  reboot_callback, exit_on_confirm=False)
 
-    self._power_off_btn = EngagedConfirmationCircleButton("power off", gui_app.texture("icons_mici/settings/device/power.png", 64, 66),
+    self._power_off_btn = EngagedConfirmationCircleButton(tr("power off"), gui_app.texture("icons_mici/settings/device/power.png", 64, 66),
                                                           power_off_callback, exit_on_confirm=False, red=True)
     self._power_off_btn.set_visible(lambda: not ui_state.ignition)
 
-    regulatory_btn = BigButton("regulatory info", "", gui_app.texture("icons_mici/settings/device/info.png", 64, 64))
+    regulatory_btn = BigButton(tr("regulatory info"), "", gui_app.texture("icons_mici/settings/device/info.png", 64, 64))
     regulatory_btn.set_click_callback(self._on_regulatory)
 
-    cabin_cam_btn = BigButton("driver\ncamera preview", "", gui_app.texture("icons_mici/settings/device/cameras.png", 64, 64),
+    cabin_cam_btn = BigButton(tr("driver\ncamera preview"), "", gui_app.texture("icons_mici/settings/device/cameras.png", 64, 64),
                               description="Preview the cabin camera to check driver monitoring visibility. The vehicle must be off.")
     cabin_cam_btn.set_click_callback(lambda: gui_app.push_widget(CabinCameraDialog()))
     cabin_cam_btn.set_enabled(lambda: ui_state.is_offroad())
 
-    review_training_guide_btn = BigButton("review\ntraining guide", "", gui_app.texture("icons_mici/settings/device/info.png", 64, 64))
+    review_training_guide_btn = BigButton(tr("review\ntraining guide"), "", gui_app.texture("icons_mici/settings/device/info.png", 64, 64))
     review_training_guide_btn.set_click_callback(lambda: gui_app.push_widget(ReviewTrainingGuide(completed_callback=lambda: gui_app.pop_widgets_to(self))))
     review_training_guide_btn.set_enabled(lambda: ui_state.is_offroad())
 
-    terms_btn = BigButton("terms &\nconditions", "", gui_app.texture("icons_mici/settings/device/info.png", 64, 64))
+    terms_btn = BigButton(tr("terms &\nconditions"), "", gui_app.texture("icons_mici/settings/device/info.png", 64, 64))
     terms_btn.set_click_callback(lambda: gui_app.push_widget(ReviewTermsPage()))
 
     self._scroller.add_widgets([

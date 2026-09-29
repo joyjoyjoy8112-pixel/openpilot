@@ -813,3 +813,101 @@ msgstr[0] "{}분 전"
 msgid "✓ SUBSCRIBED"
 msgstr "✓ 구독됨"
 
+
+
+# InfoPilot custom branding
+msgid "InfoPilot"
+msgstr "인포파일럿"
+
+
+# Joy custom branding
+msgid "Joy"
+msgstr "조이"
+
+# Joy comma4 UI
+msgid "toggles"
+msgstr "기능 설정"
+
+# Joy comma4 UI
+msgid "network"
+msgstr "네트워크"
+
+# Joy comma4 UI
+msgid "device"
+msgstr "장치"
+
+# Joy comma4 UI
+msgid "software"
+msgstr "소프트웨어"
+
+# Joy comma4 UI
+msgid "developer"
+msgstr "개발자"
+
+# Joy comma4 UI
+msgid "firehose"
+msgstr "파이어호스"
+
+# Joy comma4 UI
+msgid "device ID"
+msgstr "장치 ID"
+
+# Joy comma4 UI
+msgid "serial"
+msgstr "시리얼"
+
+# Joy comma4 UI
+msgid "pair to connect"
+msgstr "계정 연결"
+
+# Joy comma4 UI
+msgid "paired"
+msgstr "연결됨"
+
+# Joy comma4 UI
+msgid "prime"
+msgstr "프라임"
+
+# Joy comma4 UI
+msgid "prime lite"
+msgstr "프라임 라이트"
+
+# Joy comma4 UI
+msgid "claim prime trial"
+msgstr "프라임 체험 시작"
+
+# Joy comma4 UI
+msgid "upgrade to prime"
+msgstr "프라임으로 업그레이드"
+
+# Joy comma4 UI
+msgid "reset calibration"
+msgstr "보정 재설정"
+
+# Joy comma4 UI
+msgid "reset"
+msgstr "재설정"
+
+# Joy comma4 UI
+msgid "reboot"
+msgstr "재부팅"
+
+# Joy comma4 UI
+msgid "power off"
+msgstr "전원 끄기"
+
+# Joy comma4 UI
+msgid "regulatory info"
+msgstr "규정 정보"
+
+# Joy comma4 UI
+msgid "driver\ncamera preview"
+msgstr "운전자\n카메라 미리보기"
+
+# Joy comma4 UI
+msgid "review\ntraining guide"
+msgstr "교육 안내\n다시 보기"
+
+# Joy comma4 UI
+msgid "terms &\nconditions"
+msgstr "이용약관"

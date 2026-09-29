@@ -11,6 +11,7 @@ from openpilot.selfdrive.ui.ui_state import ui_state
 from openpilot.common.filter_simple import BounceFilter, FirstOrderFilter
 from openpilot.common.hardware import COMMA_HARDWARE
 from openpilot.system.ui.lib.application import gui_app, FontWeight, TextAlignment
+from openpilot.system.ui.lib.multilang import tr
 from openpilot.system.ui.widgets import Widget
 from openpilot.system.ui.widgets.label import UnifiedLabel
 
@@ -66,8 +67,8 @@ class Alert:
 
 # Pre-defined alert instances
 ALERT_STARTUP_PENDING = Alert(
-  text1="openpilot Unavailable",
-  text2="Waiting to start",
+  text1=tr("openpilot Unavailable"),
+  text2=tr("Waiting to start"),
   size=AlertSize.mid,
   status=AlertStatus.normal,
 )
