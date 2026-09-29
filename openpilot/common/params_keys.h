@@ -69,6 +69,7 @@ inline static std::unordered_map<std::string, ParamKeyAttributes> keys = {
     {"JoystickDebugMode", {CLEAR_ON_MANAGER_START | CLEAR_ON_OFFROAD_TRANSITION, BOOL}},
     {"JoyEnabled", {PERSISTENT, BOOL}},
     {"JoyStatusBadgeEnabled", {PERSISTENT, BOOL, "1"}},
+    {"JoyStatusBadgeLeft", {PERSISTENT, BOOL, "0"}},
     {"LanguageSetting", {PERSISTENT, STRING, "en"}},
     {"LastAthenaPingTime", {CLEAR_ON_MANAGER_START, INT}},
     {"LastGPSPosition", {PERSISTENT, STRING}},

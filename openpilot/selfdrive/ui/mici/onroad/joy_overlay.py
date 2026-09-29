@@ -42,7 +42,11 @@ class JoyStatusBadge(Widget):
     width = text_size.x + padding_x * 2
     height = text_size.y + padding_y * 2
 
-    x = rect.x + rect.width - width - 18
+    if ui_state.params.get_bool("JoyStatusBadgeLeft"):
+      x = rect.x + 18
+    else:
+      x = rect.x + rect.width - width - 18
+
     y = rect.y + 18
 
     badge_rect = rl.Rectangle(x, y, width, height)

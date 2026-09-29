@@ -956,3 +956,10 @@ msgstr "주행 상태 배지 표시"
 
 msgid "Show Joy driving status on the road screen."
 msgstr "주행 화면에 조이 상태를 표시합니다."
+
+
+msgid "Joy status badge on left"
+msgstr "왼쪽 표시"
+
+msgid "Show the Joy driving status badge on the left side of the road screen."
+msgstr "조이 표시를 화면 왼쪽에 표시합니다."

@@ -20,6 +20,12 @@ class JoyLayoutMici(NavScroller):
       description="주행 화면에 조이 상태를 표시합니다."
     )
 
+    joy_status_badge_left = BigParamControl(
+      tr("Joy status badge on left"),
+      "JoyStatusBadgeLeft",
+      description=tr("Show the Joy driving status badge on the left side of the road screen.")
+    )
+
     def debug_callback(state: bool):
       gui_app.set_show_fps(state)
       gui_app.set_show_touches(state)
@@ -35,6 +41,7 @@ class JoyLayoutMici(NavScroller):
       GreyBigButton(tr("Joy"), tr("Version 0.1")),
       joy_enabled,
       joy_status_badge,
+      joy_status_badge_left,
       joy_debug,
       GreyBigButton(tr("Joy custom settings"), tr("More features will be added here.")),
     ])
