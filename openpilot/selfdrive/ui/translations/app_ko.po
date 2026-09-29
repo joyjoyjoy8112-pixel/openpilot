@@ -939,3 +939,13 @@ msgstr "조이 디버그 표시"
 
 msgid "Show FPS and touch positions for Joy development."
 msgstr "조이 개발용 FPS와 터치 위치를 화면에 표시합니다."
+
+
+msgid "Joy active"
+msgstr "조이 작동"
+
+msgid "Joy override"
+msgstr "조이 개입"
+
+msgid "Joy standby"
+msgstr "조이 대기"

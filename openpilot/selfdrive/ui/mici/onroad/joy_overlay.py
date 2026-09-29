@@ -1,6 +1,6 @@
 import pyray as rl
 
-from openpilot.selfdrive.ui.ui_state import ui_state
+from openpilot.selfdrive.ui.ui_state import ui_state, UIStatus
 from openpilot.system.ui.lib.application import gui_app, FontWeight
 from openpilot.system.ui.lib.multilang import tr
 from openpilot.system.ui.lib.text_measure import measure_text_cached
@@ -16,7 +16,16 @@ class JoyStatusBadge(Widget):
     if not ui_state.params.get_bool("JoyEnabled"):
       return
 
-    text = tr("Joy")
+    if ui_state.status == UIStatus.ENGAGED:
+      text = tr("Joy active")
+      bg_color = rl.Color(0, 100, 45, 210)
+    elif ui_state.status == UIStatus.OVERRIDE:
+      text = tr("Joy override")
+      bg_color = rl.Color(140, 85, 0, 210)
+    else:
+      text = tr("Joy standby")
+      bg_color = rl.Color(35, 35, 35, 190)
+
     font_size = 34
     text_size = measure_text_cached(self._font, text, font_size)
 
@@ -34,7 +43,7 @@ class JoyStatusBadge(Widget):
       badge_rect,
       0.35,
       8,
-      rl.Color(0, 0, 0, 180),
+      bg_color,
     )
 
     rl.draw_rectangle_rounded_lines_ex(
