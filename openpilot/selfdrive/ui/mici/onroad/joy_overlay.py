@@ -21,6 +21,10 @@ class JoyStatusBadge(Widget):
   def _render(self, rect: rl.Rectangle):
     if not ui_state.params.get_bool("JoyEnabled"):
       return
+
+    # Navigation panel includes Joy status, so avoid drawing two overlays.
+    if ui_state.params.get_bool("JoyNavEnabled"):
+      return
     if not ui_state.params.get_bool("JoyStatusBadgeEnabled"):
       return
 

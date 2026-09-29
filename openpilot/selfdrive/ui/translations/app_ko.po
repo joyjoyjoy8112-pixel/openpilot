@@ -963,3 +963,22 @@ msgstr "왼쪽 표시"
 
 msgid "Show the Joy driving status badge on the left side of the road screen."
 msgstr "조이 표시를 화면 왼쪽에 표시합니다."
+
+
+msgid "Joy navigation"
+msgstr "조이 안내"
+
+msgid "Show navigation information on the road screen."
+msgstr "주행 화면에 안내 정보를 표시합니다."
+
+msgid "Joy nav"
+msgstr "안내"
+
+msgid "Joy nav next"
+msgstr "다음"
+
+msgid "Joy nav limit"
+msgstr "제한"
+
+msgid "Joy nav remaining"
+msgstr "남음"

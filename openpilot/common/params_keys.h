@@ -70,6 +70,7 @@ inline static std::unordered_map<std::string, ParamKeyAttributes> keys = {
     {"JoyEnabled", {PERSISTENT, BOOL}},
     {"JoyStatusBadgeEnabled", {PERSISTENT, BOOL, "1"}},
     {"JoyStatusBadgeLeft", {PERSISTENT, BOOL, "0"}},
+    {"JoyNavEnabled", {PERSISTENT, BOOL, "0"}},
     {"LanguageSetting", {PERSISTENT, STRING, "en"}},
     {"LastAthenaPingTime", {CLEAR_ON_MANAGER_START, INT}},
     {"LastGPSPosition", {PERSISTENT, STRING}},
